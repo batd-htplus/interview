@@ -12,7 +12,7 @@ Nguyên tắc:
 
 ---
 
-# 1. Video vs Image (Câu cơ bản nhưng rất quan trọng)
+# 1. Video vs Image
 
 ## Question
 
@@ -285,6 +285,178 @@ Chiều sâu:
 
 Kết luận:
 * Chọn model = trade-off giữa cost và performance
+
+---
+
+## Question
+Bạn có một hệ thống detect người trong video, nhưng khi người đứng yên thì model vẫn chạy liên tục gây tốn tài nguyên. Bạn giải quyết thế nào?
+
+## Answer
+
+- Dùng motion detection (frame differencing / optical flow)
+- Chỉ chạy model khi có chuyển động
+- Kết hợp tracking để giữ state
+
+Trade-off:
+- Có thể miss object nếu motion nhỏ
+
+---
+
+## Question
+Nếu video bị drop frame hoặc network không ổn định thì hệ thống xử lý sao?
+
+## Answer
+
+- Buffer frame
+- Interpolate frame (nếu cần)
+- Tracking để giữ object khi mất frame
+- Fallback logic (giữ kết quả cũ)
+
+---
+
+## Question
+Bạn thiết kế hệ thống để xử lý video 4K nhưng vẫn realtime?
+
+## Answer
+
+- Downscale input trước khi inference
+- Crop vùng quan trọng (ROI)
+- Multi-scale inference nếu cần
+
+Trade-off:
+- Mất chi tiết nhưng tăng tốc độ
+
+---
+
+## Question
+Làm sao giảm false positive trong video detection?
+
+## Answer
+
+- Temporal smoothing (object phải xuất hiện nhiều frame)
+- Confidence threshold theo thời gian
+- Ensemble nhẹ
+
+---
+
+## Question
+Nếu có nhiều model trong pipeline, bạn tối ưu như thế nào?
+
+## Answer
+
+- Model cascade (model nhẹ trước)
+- Early exit
+- Share feature giữa model
+
+---
+
+## Question
+Bạn xử lý memory leak trong hệ thống video như thế nào?
+
+## Answer
+
+- Monitor memory usage
+- Clear buffer định kỳ
+- Tránh giữ reference không cần thiết
+
+---
+
+## Question
+Tại sao video AI system dễ bị unstable hơn image system?
+
+## Answer
+
+- Input thay đổi liên tục theo thời gian
+- Error tích lũy qua frame
+- Tracking sai → lan sang các frame sau
+
+---
+
+## Question
+Bạn xử lý việc model bias theo môi trường (ví dụ chỉ train ban ngày)?
+
+## Answer
+
+- Thu thập data đa dạng (ngày/đêm)
+- Data augmentation (low light)
+- Fine-tune theo domain
+
+---
+
+## Question
+Làm sao detect anomaly trong video?
+
+## Answer
+
+- Dùng reconstruction error (autoencoder)
+- Dùng prediction error (future frame prediction)
+- Threshold bất thường
+
+---
+
+## Question
+Nếu GPU quá tải, bạn degrade system như thế nào?
+
+## Answer
+
+- Giảm FPS
+- Giảm resolution
+- Chuyển sang model nhẹ
+
+---
+
+## Question
+Bạn xử lý synchronization giữa audio và video?
+
+## Answer
+
+- Timestamp alignment
+- Buffer đồng bộ
+- Drift correction
+
+---
+
+## Question
+Tại sao không dùng full video mà chỉ dùng clip ngắn?
+
+## Answer
+
+- Giảm compute
+- Giảm noise
+- Tập trung vào segment quan trọng
+
+---
+
+## Question
+Bạn thiết kế fallback khi model fail?
+
+## Answer
+
+- Rule-based fallback
+- Model đơn giản hơn
+- Cache kết quả trước
+
+---
+
+## Question
+Làm sao detect camera bị lỗi?
+
+## Answer
+
+- Check frame black/constant
+- Check FPS drop
+- Alert nếu bất thường
+
+---
+
+## Question
+Bạn đánh giá độ ổn định của hệ thống video như thế nào?
+
+## Answer
+
+- Metric theo thời gian (temporal stability)
+- Tracking consistency
+- Frame-to-frame variance
 
 ---
 
