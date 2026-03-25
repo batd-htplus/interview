@@ -1,11 +1,4 @@
 # Senior AI Video & Computer Vision Interview Guide
-## Dành cho: Tran Chi Cuong — AI Engineer (Senior)
-
-> **Nguyên tắc phỏng vấn:**
-> - Trả lời đơn giản trước → đào sâu sau
-> - Luôn nói về **trade-off** và **production reality**
-> - CV-specific questions đánh dấu `[CV]` — khai thác trực tiếp từ kinh nghiệm ứng viên
-
 ---
 
 # PHẦN I — LÝ THUYẾT NỀN TẢNG VIDEO AI
@@ -1182,17 +1175,3 @@ Camera Frame → [Signboard Detection] → [Crop + Perspective Correction] →
 
 ---
 
-## Follow-up questions universal
-
-Bất kỳ câu nào ứng viên trả lời, có thể probe thêm bằng:
-
-- *"Bạn đã implement cái này trong production chưa? Scale như thế nào?"*
-- *"Trade-off quan trọng nhất bạn thấy là gì?"*
-- *"Nếu requirement thay đổi từ offline sang realtime, bạn thay đổi gì?"*
-- *"Bạn đo success của solution này như thế nào?"*
-- *"Điều gì có thể fail và bạn handle thế nào?"*
-- *"Có approach nào khác không? Tại sao bạn chọn cái này?"*
-
----
-
-*— End of Document — Version 2.0 | Senior AI Video Interview Guide | Tran Chi Cuong*
