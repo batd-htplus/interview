@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Fullstack Developer - 12 Weeks Smart Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .slide-frame {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .slide-frame.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399);
+        }
+
+        .custom-bullet::before {
+            content: '►';
+            color: #38bdf8;
+            font-size: 0.6rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .flow-arrow {
+            color: #475569;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-300 px-4">
+
+    <div class="max-w-5xl mx-auto">
+
+        <!-- Slide 1: Tiêu đề -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <div class="text-center">
+                    <span
+                        class="bg-sky-500/10 text-sky-400 px-4 py-1.5 rounded-full text-sm font-medium mb-6 inline-block">12
+                        Tuần · Full-time · Production Mindset</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mt-4 mb-8">
+                        CHƯƠNG TRÌNH ĐÀO TẠO<br>INTERN FULLSTACK DEVELOPER
+                    </h1>
+                    <div class="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: TỔNG QUAN CHƯƠNG TRÌNH -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 bg-gradient-to-br from-slate-800 to-indigo-900/20 border-indigo-800/50">
+                <h2 class="text-3xl font-bold text-white mb-6 border-l-4 border-indigo-500 pl-4"><i
+                        class="fas fa-rocket text-indigo-400 mr-3"></i>Tổng quan Chương trình</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Mục tiêu cốt lõi</h3>
+                        <p class="text-lg text-slate-300 mb-6">Đưa Intern từ <strong class="text-red-400">"biết code cơ
+                                bản"</strong> → <strong class="text-green-400">"fullstack dev làm việc được trong team
+                                thật"</strong></p>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="custom-bullet">Xây dựng 1 project fullstack hoàn chỉnh</li>
+                            <li class="custom-bullet">5 giai đoạn: Foundation → Backend → Database & Test → Frontend →
+                                DevOps & Docs</li>
+                            <li class="custom-bullet">Làm việc đúng quy trình công ty: GitLab, Code Review, CI/CD</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-indigo-500/20">
+                        <h3 class="text-lg font-bold text-indigo-400 mb-3"><i class="fas fa-brain mr-2"></i>Production
+                            Mindset</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check-circle text-green-500 mt-0.5 text-xs"></i>GitFlow + Conventional
+                                Commits + Code Review qua MR</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check-circle text-green-500 mt-0.5 text-xs"></i>Unit test coverage ≥
+                                80%, mock dependencies</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check-circle text-green-500 mt-0.5 text-xs"></i>Database: Prisma,
+                                indexing, migration, seeding</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check-circle text-green-500 mt-0.5 text-xs"></i>CI/CD pipeline: Docker
+                                → Lint → Test → Deploy</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check-circle text-green-500 mt-0.5 text-xs"></i>ISMS bảo mật: token,
+                                source code, tài liệu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-4 mt-6 text-center">Lộ trình 5 giai đoạn</h3>
+                <div class="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm">
+                    <div class="bg-sky-500/10 border border-sky-500/30 px-4 py-2 rounded-lg font-bold text-sky-400"><i
+                            class="fas fa-layer-group mr-1"></i>Foundation<br><span
+                            class="font-normal text-sky-300">Git, TS, SOLID</span></div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div class="bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-lg font-bold text-green-400">
+                        <i class="fas fa-server mr-1"></i>Backend<br><span class="font-normal text-green-300">NestJS,
+                            JWT, Prisma</span></div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div
+                        class="bg-purple-500/10 border border-purple-500/30 px-4 py-2 rounded-lg font-bold text-purple-400">
+                        <i class="fas fa-database mr-1"></i>DB & Test<br><span
+                            class="font-normal text-purple-300">PostgreSQL, Jest</span></div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div
+                        class="bg-orange-500/10 border border-orange-500/30 px-4 py-2 rounded-lg font-bold text-orange-400">
+                        <i class="fab fa-react mr-1"></i>Frontend<br><span class="font-normal text-orange-300">React,
+                            Query, Zod</span></div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div
+                        class="bg-pink-500/10 border border-pink-500/30 px-4 py-2 rounded-lg font-bold text-pink-400"><i
+                            class="fas fa-rocket mr-1"></i>DevOps<br><span class="font-normal text-pink-300">Docker,
+                            CI/CD</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Hệ sinh thái Công cụ (Đưa lên ĐẦU TIÊN) -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-sky-500 pl-4"><i
+                        class="fas fa-toolbox text-sky-400 mr-3"></i>Tools</h2>
+                <p class="text-slate-400 mb-8 text-lg">Làm việc 100% trên môi trường và quy trình thực tế của công ty.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-700/30 p-6 rounded-xl border border-slate-600/50">
+                        <h3 class="text-xl font-bold text-sky-400 mb-6 flex items-center gap-3"><i
+                                class="fas fa-building"></i> Quy trình Công ty</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-center gap-4"><i
+                                    class="fab fa-gitlab text-3xl text-orange-500 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">GitLab</p>
+                                    <p class="text-xs text-slate-400">Repo + CI/CD + MR</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4"><i
+                                    class="fas fa-comments text-3xl text-sky-400 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">Rocket.Chat</p>
+                                    <p class="text-xs text-slate-400">Communication + ISMS Alerts</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4"><i
+                                    class="fas fa-bug text-3xl text-red-400 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">Redmine</p>
+                                    <p class="text-xs text-slate-400">Task & Issue Tracking</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-700/30 p-6 rounded-xl border border-slate-600/50">
+                        <h3 class="text-xl font-bold text-green-400 mb-6 flex items-center gap-3"><i
+                                class="fas fa-laptop-code"></i> Kỹ thuật Dự án</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-center gap-4"><i
+                                    class="fas fa-code text-3xl text-blue-400 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">VS Code</p>
+                                    <p class="text-xs text-slate-400">IDE + Devcontainer</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4"><i
+                                    class="fab fa-docker text-3xl text-sky-500 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">Docker</p>
+                                    <p class="text-xs text-slate-400">Containerization</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4"><i
+                                    class="fas fa-database text-3xl text-blue-300 w-10 text-center"></i>
+                                <div>
+                                    <p class="text-white font-medium">PostgreSQL</p>
+                                    <p class="text-xs text-slate-400">RDBMS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Lộ trình 12 tuần (Smart UI Stepper) -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white mb-10 border-l-4 border-sky-500 pl-4">Lộ trình 12 Tuần</h2>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                    <div class="flex-1 w-full bg-sky-500/10 border border-sky-500/30 p-4 rounded-xl text-center">
+                        <div class="font-mono text-sky-400 text-xs mb-2 font-bold">T1-2</div>
+                        <div class="text-white font-bold text-sm">Foundation</div>
+                        <div class="text-slate-400 text-xs mt-1">Workflow & TS</div>
+                    </div>
+                    <div class="text-slate-600 shrink-0 rotate-90 md:rotate-0"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flex-1 w-full bg-green-500/10 border border-green-500/30 p-4 rounded-xl text-center">
+                        <div class="font-mono text-green-400 text-xs mb-2 font-bold">T3-5</div>
+                        <div class="text-white font-bold text-sm">Backend</div>
+                        <div class="text-slate-400 text-xs mt-1">NestJS & Auth</div>
+                    </div>
+                    <div class="text-slate-600 shrink-0 rotate-90 md:rotate-0"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flex-1 w-full bg-purple-500/10 border border-purple-500/30 p-4 rounded-xl text-center">
+                        <div class="font-mono text-purple-400 text-xs mb-2 font-bold">T6-7</div>
+                        <div class="text-white font-bold text-sm">Database</div>
+                        <div class="text-slate-400 text-xs mt-1">Optimize & Test</div>
+                    </div>
+                    <div class="text-slate-600 shrink-0 rotate-90 md:rotate-0"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flex-1 w-full bg-orange-500/10 border border-orange-500/30 p-4 rounded-xl text-center">
+                        <div class="font-mono text-orange-400 text-xs mb-2 font-bold">T8-9</div>
+                        <div class="text-white font-bold text-sm">Frontend</div>
+                        <div class="text-slate-400 text-xs mt-1">React & Hook</div>
+                    </div>
+                    <div class="text-slate-600 shrink-0 rotate-90 md:rotate-0"><i class="fas fa-chevron-right"></i></div>
+                    <div class="flex-1 w-full bg-pink-500/10 border border-pink-500/30 p-4 rounded-xl text-center">
+                        <div class="font-mono text-pink-400 text-xs mb-2 font-bold">T10</div>
+                        <div class="text-white font-bold text-sm">Integration & Docs</div>
+                        <div class="text-slate-400 text-xs mt-1">E2E Flow & Report</div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-4">
+                    <div class="bg-emerald-900/20 border border-emerald-600/30 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                                <i class="fas fa-diagram-project text-emerald-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-emerald-300 font-bold text-sm">Dự án xuyên suốt</h3>
+                                <p class="text-emerald-400/70 text-xs">T2 → T12 · Resource Allocation System</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm">Xây dựng hệ thống quản lý phân bổ nhân sự vào dự án — quản lý
+                            developer, project, allocation, capacity, dashboard.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded">NestJS</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded">React</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded">PostgreSQL + Prisma</span>
+                            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded">Docker</span>
+                        </div>
+                    </div>
+                    <div class="bg-sky-900/20 border border-sky-600/30 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center">
+                                <i class="fas fa-people-group text-sky-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sky-300 font-bold text-sm">Soft Skills & Culture</h3>
+                                <p class="text-sky-400/70 text-xs">T1 → T12 · Xuyên suốt</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm">Estimation, code review, viết QAs, báo cáo standup, tuân thủ ISMS
+                            — rèn luyện tư duy production ngay từ ngày đầu.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="text-[10px] bg-sky-500/10 text-sky-400 px-2 py-1 rounded">GitLab Flow</span>
+                            <span class="text-[10px] bg-sky-500/10 text-sky-400 px-2 py-1 rounded">Code Review</span>
+                            <span class="text-[10px] bg-sky-500/10 text-sky-400 px-2 py-1 rounded">ISMS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Kiến trúc Hệ thống (Smart UI Blocks) -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white mb-10 border-l-4 border-sky-500 pl-4">Công nghệ chính
+                </h2>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <div class="w-full md:w-1/4 bg-slate-700/40 border border-orange-500/30 p-5 rounded-xl">
+                        <h3 class="text-orange-400 font-bold mb-3 text-center"><i class="fab fa-react mr-2"></i>Frontend
+                        </h3>
+                        <div class="space-y-2 text-sm text-center">
+                            <div class="bg-slate-800 p-2 rounded">React + TypeScript</div>
+                            <div class="bg-slate-800 p-2 rounded">TanStack Query</div>
+                            <div class="bg-slate-800 p-2 rounded">Zod Validation</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow hidden md:block"><i class="fas fa-arrows-left-right"></i></div>
+                    <div class="flow-arrow md:hidden"><i class="fas fa-arrows-up-down"></i></div>
+
+                    <div class="w-full md:w-1/4 bg-slate-700/40 border border-green-500/30 p-5 rounded-xl">
+                        <h3 class="text-green-400 font-bold mb-3 text-center"><i class="fas fa-server mr-2"></i>Backend
+                        </h3>
+                        <div class="space-y-2 text-sm text-center">
+                            <div class="bg-slate-800 p-2 rounded">NestJS REST API</div>
+                            <div class="bg-slate-800 p-2 rounded">JWT & RBAC</div>
+                            <div class="bg-slate-800 p-2 rounded">TypeORM</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow hidden md:block"><i class="fas fa-arrows-left-right"></i></div>
+                    <div class="flow-arrow md:hidden"><i class="fas fa-arrows-up-down"></i></div>
+
+                    <div class="w-full md:w-1/4 bg-slate-700/40 border border-red-500/30 p-5 rounded-xl">
+                        <h3 class="text-red-400 font-bold mb-3 text-center"><i class="fas fa-database mr-2"></i>Infra &
+                            DB</h3>
+                        <div class="space-y-2 text-sm text-center">
+                            <div class="bg-slate-800 p-2 rounded">PostgreSQL</div>
+                            <div class="bg-slate-800 p-2 rounded">Docker Compose</div>
+                            <div class="bg-slate-800 p-2 rounded">GitLab CI/CD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PHẦN 2: CHI TIẾT WORKFLOW ================= -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 text-center">
+                <h2 class="text-3xl font-bold text-white">CHI TIẾT WORKFLOW</h2>
+            </div>
+        </div>
+
+        <!-- Slide 6: Phase 1 - GitLab Workflow -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Foundation & Workflow</h2>
+
+                <ul class="space-y-3 custom-bullet text-lg mb-8">
+                    <li><strong class="text-white">Tuần 1:</strong> Git internals, GitFlow, Conventional Commits, PR,
+                        TypeScript strict, Husky.</li>
+                    <li><strong class="text-white">Tuần 2:</strong> Event Loop, Project Structure, SOLID + DI, Config &
+                        Logger.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mb-4 text-center">GitLab Workflow</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-3 text-sm">
+                    <div class="bg-slate-700 px-4 py-3 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-code-branch text-sky-400 mr-2"></i>Tạo Branch</div>
+                    <div class="flow-arrow text-sm"><i class="fas fa-arrow-right"></i></div>
+                    <div class="bg-slate-700 px-4 py-3 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-laptop-code text-purple-400 mr-2"></i>Code & Commit</div>
+                    <div class="flow-arrow text-sm"><i class="fas fa-arrow-right"></i></div>
+                    <div class="bg-slate-700 px-4 py-3 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fab fa-gitlab text-orange-500 mr-2"></i>Tạo Merge Request</div>
+                    <div class="flow-arrow text-sm"><i class="fas fa-arrow-right"></i></div>
+                    <div
+                        class="bg-green-900/40 px-4 py-3 rounded-lg border border-green-500/50 font-bold text-green-400">
+                        <i class="fas fa-check-circle mr-2"></i>Code Review & Merge
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Phase 2 - NestJS Request Lifecycle -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Backend Core & Auth</h2>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    <ul class="space-y-3 custom-bullet text-lg">
+                        <li><strong class="text-white">Tuần 3:</strong> Modules, Controllers, Services, DI, Swagger.
+                        </li>
+                        <li><strong class="text-white">Tuần 4:</strong> JWT, Refresh Token, RBAC, Hashing.</li>
+                        <li><strong class="text-white">Tuần 5:</strong> PostgreSQL, Prisma, Schema, Migrations.</li>
+                    </ul>
+
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-full bg-slate-600 p-2 rounded text-center text-sm text-slate-300">HTTP Request
+                        </div>
+                        <i class="fas fa-arrow-down text-slate-500"></i>
+                        <div
+                            class="w-11/12 bg-red-900/30 border border-red-500/30 p-2 rounded text-center text-sm text-red-400">
+                            Guard <span class="text-slate-500">(Auth & RBAC)</span></div>
+                        <i class="fas fa-arrow-down text-slate-500"></i>
+                        <div
+                            class="w-9/12 bg-purple-900/30 border border-purple-500/30 p-2 rounded text-center text-sm text-purple-400">
+                            Interceptor <span class="text-slate-500">(Logging)</span></div>
+                        <i class="fas fa-arrow-down text-slate-500"></i>
+                        <div
+                            class="w-7/12 bg-orange-900/30 border border-orange-500/30 p-2 rounded text-center text-sm text-orange-400">
+                            Pipe <span class="text-slate-500">(Validation)</span></div>
+                        <i class="fas fa-arrow-down text-slate-500"></i>
+                        <div
+                            class="w-5/12 bg-green-900/30 border border-green-500/30 p-2 rounded text-center text-sm text-green-400">
+                            Controller & Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Phase 3 - Database & Testing -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Database & Testing</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold text-sky-400 mb-4 flex items-center gap-2"><i
+                                class="fas fa-database"></i> PostgreSQL + Prisma</h3>
+                        <ul class="space-y-3 custom-bullet text-lg">
+                            <li><strong class="text-white">Tuần 6:</strong> Prisma schema, models, relations, migrations,
+                                seeding.</li>
+                            <li class="text-base text-slate-400 ml-5">Index, EXPLAIN ANALYZE, slow query, cursor
+                                pagination.</li>
+                        </ul>
+
+                        <div class="mt-6 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-8 h-8 rounded bg-indigo-500/20 flex items-center justify-center">
+                                    <i class="fab fa-node-js text-indigo-400 text-sm"></i>
+                                </div>
+                                <span class="text-white font-mono text-sm">npx prisma generate</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded bg-indigo-500/20 flex items-center justify-center">
+                                    <i class="fas fa-arrow-up text-indigo-400 text-sm"></i>
+                                </div>
+                                <span class="text-white font-mono text-sm">npx prisma migrate dev</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-orange-400 mb-4 flex items-center gap-2"><i
+                                class="fas fa-vial"></i> Testing với Jest</h3>
+                        <ul class="space-y-3 custom-bullet text-lg">
+                            <li><strong class="text-white">Tuần 7:</strong> Unit test services, mock dependencies.</li>
+                            <li class="text-base text-slate-400 ml-5">Test coverage, mocking, edge cases.</li>
+                        </ul>
+
+                        <div class="mt-6 flex flex-col">
+                            <div class="w-32 bg-red-500/80 p-2.5 rounded-t-lg text-center text-xs text-white font-bold">
+                                E2E Test</div>
+                            <div
+                                class="w-48 bg-orange-500/80 p-2.5 text-center text-xs text-white font-bold">
+                                Integration Test</div>
+                            <div class="w-64 bg-green-500/80 p-2.5 rounded-b-lg text-center text-xs text-white font-bold">
+                                Unit Test (Cốt lõi)</div>
+                            <p class="mt-3 text-xs text-slate-400">Tập trung 70% công sức viết Unit Test để bền vững</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Phase 4 - React Data Flow -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Frontend & Integration</h2>
+
+                <ul class="space-y-3 custom-bullet text-lg mb-8">
+                    <li><strong class="text-white">Tuần 8:</strong> Hooks, Context, React Hook Form + Zod, TanStack
+                        Query.</li>
+                    <li><strong class="text-white">Tuần 9:</strong> Component Arch, Profiler, Code Splitting, E2E
+                        integration.</li>
+                </ul>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-sm">
+                    <div class="bg-sky-900/30 border border-sky-500/30 px-5 py-3 rounded-lg text-sky-400 font-bold"><i
+                            class="fas fa-desktop mr-2"></i>React UI</div>
+                    <div class="flex flex-col items-center text-slate-500">
+                        <i class="fas fa-arrow-right hidden md:block"></i>
+                        <i class="fas fa-arrow-down md:hidden"></i>
+                        <span class="text-[10px]">Event</span>
+                    </div>
+                    <div
+                        class="bg-orange-900/30 border border-orange-500/30 px-5 py-3 rounded-lg text-orange-400 font-bold">
+                        <i class="fas fa-wpforms mr-2"></i>Zod + Hook Form
+                    </div>
+                    <div class="flex flex-col items-center text-slate-500">
+                        <i class="fas fa-arrow-right hidden md:block"></i>
+                        <i class="fas fa-arrow-down md:hidden"></i>
+                        <span class="text-[10px]">Mutation</span>
+                    </div>
+                    <div
+                        class="bg-green-900/30 border border-green-500/30 px-5 py-3 rounded-lg text-green-400 font-bold">
+                        <i class="fas fa-server mr-2"></i>NestJS API
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Phase 5 & 6 - CI/CD Pipeline Track -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 border-red-800/50 bg-gradient-to-br from-slate-800 to-red-900/10">
+                <h2 class="text-3xl font-extrabold text-white mb-6">Integration, CI/CD & Tài liệu</h2>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-sky-500/30">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/20 flex items-center justify-center">
+                                <i class="fas fa-plug text-sky-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sky-400 font-bold text-sm">Tuần 10</p>
+                                <p class="text-white font-bold">Integration</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1 text-xs"></i>Kết nối FE + BE hoàn chỉnh (CORS, proxy)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1 text-xs"></i>E2E flow của Resource Allocation System</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1 text-xs"></i>Refactoring code, xử lý edge cases</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1 text-xs"></i>Văn hoá Code Review: self-review, fix feedback</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-orange-500/30">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                <i class="fab fa-docker text-orange-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-orange-400 font-bold text-sm">Tuần 11</p>
+                                <p class="text-white font-bold">DevOps & CI/CD</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs"></i>Docker multi-stage cho BE + FE</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs"></i>Docker Compose cho fullstack</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs"></i>GitLab CI: lint → test → build → deploy</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-orange-500 mt-1 text-xs"></i>Monitor cơ bản (health check, log)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-green-500/30">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
+                                <i class="fas fa-book text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-green-400 font-bold text-sm">Tuần 12</p>
+                                <p class="text-white font-bold">Tài liệu & Kết thúc</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i>API Documentation với Swagger</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i>README: setup guide, architecture</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i>Report tổng kết + demo sản phẩm</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i>Đánh giá kết thúc khoá đào tạo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-4">GitLab CI/CD Pipeline</h3>
+                <div
+                    class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="text-center flex-1">
+                        <i class="fas fa-code text-sky-400 text-2xl mb-2"></i>
+                        <p class="text-xs text-slate-300">1. Developer Push Code</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-slate-600 hidden md:block"></i>
+                    <div class="text-center flex-1">
+                        <i class="fas fa-vial text-purple-400 text-2xl mb-2"></i>
+                        <p class="text-xs text-slate-300">2. Lint & Unit Test</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-slate-600 hidden md:block"></i>
+                    <div class="text-center flex-1">
+                        <i class="fab fa-docker text-sky-500 text-2xl mb-2"></i>
+                        <p class="text-xs text-slate-300">3. Docker Build Image</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-slate-600 hidden md:block"></i>
+                    <div class="text-center flex-1">
+                        <i class="fas fa-rocket text-green-400 text-2xl mb-2"></i>
+                        <p class="text-xs text-slate-300">4. Deploy to Staging/Prod</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 text-center">
+                <h2 class="text-3xl font-bold text-white">Thực chiến tại Công ty</h2>
+            </div>
+        </div>
+
+        <!-- Slide 4: Project X Introduction -->
+        <div class="slide-frame">
+            <div
+                class="slide-card p-8 md:p-12 border-emerald-800/50 bg-gradient-to-br from-slate-800 to-emerald-900/10">
+                <h2 class="text-3xl font-bold text-white mb-4 border-l-4 border-emerald-500 pl-4"><i
+                        class="fas fa-diagram-project text-emerald-400 mr-3"></i>Dự án Xuyên suốt: Resource Allocation
+                    System</h2>
+                <p class="text-slate-400 text-lg mb-8">Hệ thống Quản lý Phân bổ Nhân sự vào Dự án. Bắt đầu từ Tuần 2 và
+                    hoàn thiện qua từng phase.</p>
+
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-emerald-500/20 text-center">
+                        <i class="fas fa-users-gear text-2xl text-emerald-400 mb-2"></i>
+                        <h3 class="text-white font-bold text-sm mb-1">Quản lý Developer</h3>
+                        <p class="text-xs text-slate-400">HR tạo hồ sơ, skills, capacity</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-emerald-500/20 text-center">
+                        <i class="fas fa-briefcase text-2xl text-sky-400 mb-2"></i>
+                        <h3 class="text-white font-bold text-sm mb-1">Quản lý Project</h3>
+                        <p class="text-xs text-slate-400">PM tạo project, thời gian, status</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-emerald-500/20 text-center">
+                        <i class="fas fa-arrows-left-right text-2xl text-orange-400 mb-2"></i>
+                        <h3 class="text-white font-bold text-sm mb-1">Phân bổ (Allocation)</h3>
+                        <p class="text-xs text-slate-400">Core: check overlap, ≤100% capacity</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-emerald-500/20 text-center">
+                        <i class="fas fa-chart-line text-2xl text-purple-400 mb-2"></i>
+                        <h3 class="text-white font-bold text-sm mb-1">Dashboard & Forecast</h3>
+                        <p class="text-xs text-slate-400">Capacity, overload, forecast</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs">
+                    <span class="bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20"><i
+                            class="fas fa-check-circle mr-1"></i>RBAC: Admin, HR, PM, Viewer</span>
+                    <span class="bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20"><i
+                            class="fas fa-check-circle mr-1"></i>Audit Log mọi hành động</span>
+                    <span class="bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20"><i
+                            class="fas fa-check-circle mr-1"></i>Validate overlap & capacity</span>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 6: Soft Skills & Workflow -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-sky-500 pl-4"><i
+                        class="fas fa-users text-sky-400 mr-3"></i>Kỹ năng Mềm & Workflow</h2>
+
+                <h3 class="text-lg font-bold text-slate-300 mb-4 text-center">Lifecycle: Nhận Task → Hoàn thành</h3>
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-8 text-xs md:text-sm">
+                    <div class="bg-slate-700 px-3 py-2 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-inbox text-sky-400 mr-1"></i>1. Nhận Task (Redmine)</div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div class="bg-slate-700 px-3 py-2 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-clock text-yellow-400 mr-1"></i>2. Estimation (Thời gian)</div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div class="bg-slate-700 px-3 py-2 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-comments text-purple-400 mr-1"></i>3. QAs (Hỏi rõ req)</div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div class="bg-slate-700 px-3 py-2 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-code text-green-400 mr-1"></i>4. Coding</div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div class="bg-slate-700 px-3 py-2 rounded-lg border border-slate-600 font-medium text-slate-300"><i
+                            class="fas fa-bug text-red-400 mr-1"></i>5. Log Bug / Test</div>
+                    <i class="fas fa-arrow-right text-slate-600 hidden md:block"></i>
+                    <div
+                        class="bg-green-900/40 px-3 py-2 rounded-lg border border-green-500/50 font-bold text-green-400">
+                        <i class="fas fa-check-circle mr-1"></i>6. PR & Report
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-700/40 p-5 rounded-xl border border-slate-600/50">
+                        <h4 class="text-white font-bold mb-3"><i
+                                class="fas fa-clock text-yellow-400 mr-2"></i>Estimation (Dự tính)</h4>
+                        <p class="text-sm text-slate-400">Không nhận task xong làm ngay. Phải chia nhỏ task, dự tính
+                            thời gian (worst case) và commit deadline với Mentor/PM.</p>
+                    </div>
+                    <div class="bg-slate-700/40 p-5 rounded-xl border border-slate-600/50">
+                        <h4 class="text-white font-bold mb-3"><i class="fas fa-bug text-red-400 mr-2"></i>Log Bug & Báo
+                            cáo</h4>
+                        <p class="text-sm text-slate-400">Ghi rõ: Steps to reproduce, Expected vs Actual result. Báo cáo
+                            tiến độ hàng ngày qua Standup (Yesterday - Today - Blockers).</p>
+                    </div>
+                    <div class="bg-slate-700/40 p-5 rounded-xl border border-slate-600/50">
+                        <h4 class="text-white font-bold mb-3"><i
+                                class="fas fa-circle-question text-purple-400 mr-2"></i>Viết QAs</h4>
+                        <p class="text-sm text-slate-400">Không tự đoán requirement! Nếu ambiguous, phải viết câu hỏi rõ
+                            ràng (QAs) gửi PM/Team trước khi code để tránh làm lại.</p>
+                    </div>
+                    <div class="bg-slate-700/40 p-5 rounded-xl border border-slate-600/50">
+                        <h4 class="text-white font-bold mb-3"><i class="fas fa-handshake text-sky-400 mr-2"></i>Văn hóa
+                            Code Review</h4>
+                        <p class="text-sm text-slate-400">Không coi Code Review là bị soi. Đó là quá trình học hỏi từ
+                            Senior. Luôn giải thích rõ ràng logic trong Merge Request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: ISMS & Company Rules -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 border-yellow-800/50 bg-gradient-to-br from-slate-800 to-yellow-900/10">
+                <div class="absolute top-6 right-8 text-slate-600 font-mono text-sm">03</div>
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-yellow-500 pl-4"><i
+                        class="fas fa-shield-halved text-yellow-400 mr-3"></i>ISMS & Nội quy Bảo mật Công ty</h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-yellow-500/20">
+                        <div class="flex items-center gap-3 mb-2"><i class="fas fa-desktop text-xl text-yellow-400"></i>
+                            <h3 class="text-white font-bold">Sử dụng Phần mềm & Thiết bị</h3>
+                        </div>
+                        <p class="text-sm text-slate-400">Chỉ dùng phần mềm có phép. Không cài crack. Không truy cập
+                            trang độc hại.</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-yellow-500/20">
+                        <div class="flex items-center gap-3 mb-2"><i
+                                class="fas fa-virus-slash text-xl text-red-400"></i>
+                            <h3 class="text-white font-bold">Xử lý Virus/Malware</h3>
+                        </div>
+                        <p class="text-sm text-slate-400">Ngắt mạng ngay. Báo qua <strong
+                                class="text-sky-400">Rocket.Chat</strong> (IT Support). Không tự xóa file.</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-yellow-500/20">
+                        <div class="flex items-center gap-3 mb-2"><i class="fab fa-gitlab text-xl text-orange-500"></i>
+                            <h3 class="text-white font-bold">Bảo mật Source Code</h3>
+                        </div>
+                        <p class="text-sm text-slate-400">Không push public repo. Không lộ token/API key ra ngoài.</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-yellow-500/20">
+                        <div class="flex items-center gap-3 mb-2"><i
+                                class="fas fa-file-shield text-xl text-green-400"></i>
+                            <h3 class="text-white font-bold">Bảo mật Tài liệu</h3>
+                        </div>
+                        <p class="text-sm text-slate-400">Không gửi tài liệu nội bộ (design, schema) ra email cá nhân.
+                            Tuân thủ NDA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 text-center">
+                <h2 class="text-3xl font-bold text-white">KẾT QUẢ & ĐÁNH GIÁ</h2>
+            </div>
+        </div>
+        
+
+        <!-- Slide 14: HẠNG MỤC ĐÁNH GIÁ MENTOR -->
+        <div class="slide-frame">
+            <div
+                class="slide-card p-8 md:p-12 bg-gradient-to-br from-slate-800 to-emerald-900/20 border-emerald-800/50">
+                <div class="absolute top-6 right-8 text-slate-600 font-mono text-sm">14</div>
+                <h2 class="text-3xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4"><i
+                        class="fas fa-clipboard-check text-emerald-400 mr-3"></i>Hạng mục Đánh giá — Mentor</h2>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-server"></i> Backend API
+                        </h3>
+                        <p class="text-sm text-slate-400">NestJS, REST, JWT, RBAC, Swagger, caching, rate-limit</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fab fa-react"></i> Frontend
+                        </h3>
+                        <p class="text-sm text-slate-400">React, TypeScript, TanStack Query, validation, lazy load</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-database"></i> Database & Test
+                        </h3>
+                        <p class="text-sm text-slate-400">PostgreSQL, index, migration, coverage ≥ 80%</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-rocket"></i> DevOps & CI/CD
+                        </h3>
+                        <p class="text-sm text-slate-400">Docker, GitLab CI, multi-stage, auto deploy</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-brain"></i> Tư duy & Quy trình
+                        </h3>
+                        <p class="text-sm text-slate-400">Tự debug, code review, estimation, chủ động cải tiến</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-emerald-500/20">
+                        <h3 class="text-emerald-400 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-shield-halved"></i> Bảo mật & ISMS
+                        </h3>
+                        <p class="text-sm text-slate-400">Tuân thủ quy định, bảo vệ source, không lộ token</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-slate-900/60 rounded-xl border border-emerald-500/20 text-center">
+                    <p class="text-emerald-400 font-bold">
+                        <i class="fas fa-flag-checkered mr-2"></i>
+                        Mentor đánh giá từng hạng mục: <span class="text-white">✅ Đạt</span> hoặc <span
+                            class="text-red-400">❌ Chưa đạt</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+<!-- Slide 13: KẾT QUẢ CUỐI CÙNG - 3 KHÍA CẠNH (MỚI) -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12">
+                <div class="absolute top-6 right-8 text-slate-600 font-mono text-sm">13</div>
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-sky-500 pl-4"><i
+                        class="fas fa-trophy text-yellow-400 mr-3"></i>Kết quả Cuối cùng (Sau 12 Tuần)</h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Kỹ thuật -->
+                    <div class="bg-sky-900/20 p-5 rounded-xl border border-sky-500/30">
+                        <h3 class="text-sky-400 font-bold text-lg mb-4 text-center"><i
+                                class="fas fa-laptop-code mr-2"></i>Kỹ Năng Kỹ Thuật</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Build REST API production-ready
+                            </li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Design DB index đúng, tránh N+1
+                            </li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Viết test ≥80% coverage</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Build FE kết nối BE thật</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Containerize bằng Docker</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-sky-500 mt-1 text-xs"></i>Deploy Staging & xử lý incident
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tư duy -->
+                    <div class="bg-purple-900/20 p-5 rounded-xl border border-purple-500/30">
+                        <h3 class="text-purple-400 font-bold text-lg mb-4 text-center"><i
+                                class="fas fa-brain mr-2"></i>Về Tư Duy</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-purple-500 mt-1 text-xs"></i>Xóa mindset "chạy là được"
+                            </li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-purple-500 mt-1 text-xs"></i>Biết tự debug thay vì
+                                hỏi ngay</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-purple-500 mt-1 text-xs"></i>Hiểu tại sao code phải
+                                maintainable</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-purple-500 mt-1 text-xs"></i>Có security awareness
+                                cơ bản</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-purple-500 mt-1 text-xs"></i>Biết đọc & review code
+                                người khác</li>
+                        </ul>
+                    </div>
+
+                    <!-- Thực tế -->
+                    <div class="bg-green-900/20 p-5 rounded-xl border border-green-500/30">
+                        <h3 class="text-green-400 font-bold text-lg mb-4 text-center"><i
+                                class="fas fa-hands mr-2"></i>Thực Tế Làm Việc</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-green-500 mt-1 text-xs"></i>Nhận task thật trong team</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-green-500 mt-1 text-xs"></i>Tự implement feature end-to-end
+                            </li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-green-500 mt-1 text-xs"></i>Tự tạo PR, self-review, fix
+                                feedback</li>
+                            <li class="flex items-start gap-2"><i
+                                    class="fas fa-check text-green-500 mt-1 text-xs"></i>Không cần mentor cầm tay từng
+                                bước</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 15: Q&A -->
+        <div class="slide-frame">
+            <div class="slide-card p-8 md:p-12 bg-gradient-to-br from-slate-800 to-sky-900/40">
+                <div class="text-center">
+                    <div class="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">END</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript cho hiệu ứng cuộn -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide-frame');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+            slides.forEach(slide => observer.observe(slide));
+        });
+    </script>
+</body>
+
+</html>
